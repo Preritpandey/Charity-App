@@ -1,42 +1,53 @@
 import 'package:flutter/material.dart';
+import 'package:voln/widgets/app_text.dart';
 
 class EventCard extends StatelessWidget {
-  final String title;
+  final String category;
   final String imageUrl;
 
-  const EventCard({super.key, required this.title, required this.imageUrl});
+  const EventCard({super.key, required this.category, required this.imageUrl});
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-      clipBehavior: Clip.antiAlias,
-      elevation: 4,
-      child: Stack(
-        children: [
-          Image.network(
-            imageUrl,
-            height: double.infinity,
-            width: double.infinity,
-            fit: BoxFit.cover,
-          ),
-          Positioned(
-            bottom: 16,
-            left: 16,
-            child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-              decoration: BoxDecoration(
-                color: Colors.pinkAccent,
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: Text(
-                title,
-                style: const TextStyle(
-                    color: Colors.white, fontWeight: FontWeight.bold),
+    return SizedBox(
+      width: MediaQuery.of(context).size.width * 0.6,
+      child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
+        ),
+        clipBehavior: Clip.antiAlias,
+        child: Stack(
+          children: [
+            // Ensuring the image takes full size while respecting the border radius
+            Positioned.fill(
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: Image.asset(
+                  imageUrl,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
-          ),
-        ],
+            Positioned(
+              bottom: 0,
+              left: 0,
+              child: Container(
+                padding: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+                decoration: BoxDecoration(
+                  color: const Color.fromARGB(255, 200, 153, 194),
+                  borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(10),
+                    bottomLeft: Radius.circular(20),
+                  ),
+                ),
+                child: AppText(
+                  text: category,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
