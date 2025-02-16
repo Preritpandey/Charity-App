@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:voln/pages/Home/menu_page.dart';
+import 'package:voln/resources/constant.dart';
 import 'package:voln/resources/text_heading.dart';
 import 'package:voln/resources/text_normal.dart';
 import 'package:voln/resources/text_subheading.dart';
+import 'package:voln/widgets/categories_card.dart';
 import 'package:voln/widgets/event_card.dart';
 
 class HomePage extends StatefulWidget {
@@ -19,7 +21,10 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Explore Projects'),
+        title: TextHeading(
+          text: 'Welcome Tom!',
+          color: appDarkPurple,
+        ),
         actions: [
           IconButton(
               onPressed: () {
@@ -34,37 +39,33 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const TextHeading(text: 'Welcome Tom!'),
-            Expanded(
-                child: ListView.builder(
-                    itemCount: 3,
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: (context, index) {
-                      return EventCard(
-                          category: "Help children",
-                          imageUrl: "assets/children.png");
-                    })),
+            const TextHeading(
+              text: 'Explore Projects',
+              color: appDarkPurple,
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.2,
+              child: Expanded(
+                  child: ListView.builder(
+                      itemCount: 3,
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (context, index) {
+                        return const EventCard(
+                            category: "Help children",
+                            imageUrl: "assets/children.png");
+                      })),
+            ),
             const SizedBox(height: 15),
             const Text('Categories'),
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.2,
+              height: MediaQuery.of(context).size.height * 0.16,
               child: ListView.builder(
                 itemCount: 3,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (BuildContext context, int index) {
-                  return Column(
-                    children: [
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.12,
-                        child: Card(
-                          child: Center(
-                            child: Image.network('https://picsum.photos/300'),
-                          ),
-                        ),
-                      ),
-                      const Text("Environment")
-                    ],
-                  );
+                  return CategoriesCard(
+                      category: 'Environment',
+                      imageUrl: 'https://picsum.photos/300');
                 },
               ),
             ),

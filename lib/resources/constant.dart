@@ -8,6 +8,9 @@ const String fontFamily = 'Montserrat';
 const Color heraldGreen = Color.fromRGBO(116, 192, 67, 1);
 
 const Color green = Color.fromRGBO(24, 173, 103, 1);
+const Color appPurple = Color.fromARGB(255, 200, 153, 194);
+const Color appDarkPurple = Color.fromARGB(255, 109, 86, 105);
+
 const Color marginColor = Color.fromRGBO(223, 223, 223, 1);
 const Color bluishGreen = Color.fromRGBO(0, 149, 125, 1);
 const Color darkBluishGreen = Color.fromRGBO(47, 72, 88, 1);

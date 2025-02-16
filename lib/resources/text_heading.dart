@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:voln/resources/constant.dart';
 
 class TextHeading extends StatelessWidget {
@@ -8,7 +9,7 @@ class TextHeading extends StatelessWidget {
   final int maxLines;
   const TextHeading(
       {super.key,
-      this.size = 24,
+      this.size = 16,
       required this.text,
       this.color = textColor,
       this.maxLines = 2});
@@ -18,8 +19,7 @@ class TextHeading extends StatelessWidget {
     return Text(text!,
         maxLines: maxLines,
         overflow: TextOverflow.visible,
-        style: TextStyle(
-          fontFamily: fontFamily,
+        style: GoogleFonts.poppins(
           color: color,
           fontSize: size == 24 ? fontSize24 : size,
           fontWeight: FontWeight.bold,
