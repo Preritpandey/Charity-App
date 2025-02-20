@@ -25,7 +25,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     final List pages = [
-      const HomePage(),
+       HomePage(),
       const Location(),
       const Search(),
       const Calendar(),

@@ -9,43 +9,40 @@ class EventCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
+
     return SizedBox(
-      width: MediaQuery.of(context).size.width * 0.6,
+      width: screenWidth * 0.5,
       child: Card(
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(10),
         ),
         clipBehavior: Clip.antiAlias,
-        child: Stack(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Ensuring the image takes full size while respecting the border radius
-            Positioned.fill(
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: Image.asset(
-                  imageUrl,
-                  fit: BoxFit.cover,
+            Center(
+              child: SizedBox(
+                width: screenWidth * 0.42,
+                height: screenHeight * 0.2,
+                child: Stack(
+                  children: [
+                    Container(
+                      height: screenHeight * 0.2,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        image: DecorationImage(
+                          image: AssetImage(imageUrl),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
-            Positioned(
-              bottom: 0,
-              left: 0,
-              child: Container(
-                padding: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
-                decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 200, 153, 194),
-                  borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(10),
-                    bottomLeft: Radius.circular(20),
-                  ),
-                ),
-                child: AppText(
-                  text: category,
-                  color: Colors.white,
-                ),
-              ),
-            ),
+            AppText(text: category)
           ],
         ),
       ),
