@@ -8,16 +8,29 @@ import 'package:voln/widgets/app_text.dart';
 import 'package:voln/widgets/categories_card.dart';
 import 'package:voln/widgets/event_card.dart';
 
+extension MediaQueryValues on BuildContext {
+  Size get screenSize => MediaQuery.of(this).size;
+  double get screenWidth => screenSize.width;
+  double get screenHeight => screenSize.height;
+}
+
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  List<Map<String, String>> categoriesImages = [
+    {'Disaster': 'QuickBarIcons/Disaster.png'},
+    {'Education': 'QuickBarIcons/Education.png'},
+    {'Medical': 'QuickBarIcons/Medical.png'},
+    {'Others': 'QuickBarIcons/Others.png'}
+  ];
+  HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
-    double screenHeight = MediaQuery.of(context).size.height; 
+    double screenWidth = context.screenWidth;
+    double screenHeight = context.screenHeight;
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.only(bottom: 12, left: 12, right: 12),
+        padding: EdgeInsets.symmetric(
+            horizontal: screenWidth * 0.02, vertical: screenHeight * 0.01),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -49,15 +62,20 @@ class HomePage extends StatelessWidget {
                     ),
                   ],
                 ),
-                IconButton(onPressed: () {}, icon: Icon(Icons.search_rounded))
+                Padding(
+                  padding: EdgeInsets.only(left: screenWidth * 0.5),
+                  child: IconButton(
+                      onPressed: () {}, icon: Icon(Icons.search_rounded)),
+                )
               ],
             ),
+            SizedBox(height: screenHeight * 0.01),
             const TextHeading(
               text: 'Explore Projects',
               color: appDarkPurple,
             ),
             SizedBox(
-              height: screenHeight * 0.35,
+              height: screenHeight * 0.3,
               child: Expanded(
                 child: ListView.builder(
                   itemCount: 3,
@@ -71,20 +89,21 @@ class HomePage extends StatelessWidget {
               ),
             ),
 
-            // const SizedBox(height: 15),
-            // const Text('Categories'),
-            // SizedBox(
-            //   height: screenHeight * 0.16,
-            //   child: ListView.builder(
-            //     itemCount: 3,
-            //     scrollDirection: Axis.horizontal,
-            //     itemBuilder: (BuildContext context, int index) {
-            //       return CategoriesCard(
-            //           category: 'Environment',
-            //           imageUrl: 'https://picsum.photos/300');
-            //     },
-            //   ),
-            // ),
+            const SizedBox(height: 10),
+            const Text('Categories'),
+            SizedBox(
+              height: screenHeight * 0.16,
+              child: ListView.builder(
+                itemCount: 4,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (BuildContext context, int index) {
+                  print(categoriesImages[1].values.toString());
+                  return CategoriesCard(
+                      category: categoriesImages[index].keys.toString(),
+                      imageUrl: categoriesImages[index].values.toString());
+                },
+              ),
+            ),
             // const Text("Trending"),
             // SizedBox(height: screenHeight * 0.01),
             // SizedBox(

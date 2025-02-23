@@ -13,8 +13,8 @@ class CategoriesCard extends StatelessWidget {
     return Column(
       children: [
         SizedBox(
-          width: MediaQuery.of(context).size.width * 0.2,
-          height: MediaQuery.of(context).size.width * 0.2,
+          width: MediaQuery.of(context).size.width * 0.15,
+          height: MediaQuery.of(context).size.width * 0.15,
           child: Card(
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(15),
@@ -23,7 +23,7 @@ class CategoriesCard extends StatelessWidget {
             child: Positioned.fill(
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(15),
-                child: Image.network(
+                child: Image.asset(
                   imageUrl,
                   fit: BoxFit.cover,
                 ),
