@@ -8,12 +8,12 @@ class AppText extends StatelessWidget {
   Color color;
 
   AppText({
-    Key? key,
+    super.key,
     required this.text,
     this.fontSize = 13,
     this.color = Colors.black,
     this.fontWeight = FontWeight.normal,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

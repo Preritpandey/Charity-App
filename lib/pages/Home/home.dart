@@ -25,7 +25,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     final List pages = [
-       HomePage(),
+      HomePage(),
       const Location(),
       const Search(),
       const Calendar(),
@@ -49,15 +49,20 @@ class _HomeState extends State<Home> {
           currentIndex: selectedTab,
           onTap: (value) => changeTab(value),
           enableFeedback: false,
-          items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'home'),
+          items: [
             BottomNavigationBarItem(
-                icon: Icon(Icons.location_on), label: 'location'),
-            BottomNavigationBarItem(icon: Icon(Icons.search), label: 'search'),
+                icon: Image.asset('assets/NavIcons/home.png'), label: 'home'),
             BottomNavigationBarItem(
-                icon: Icon(Icons.calendar_month), label: 'calendar'),
+                icon: Image.asset('assets/NavIcons/bookmark.png'),
+                label: 'bookmark'),
             BottomNavigationBarItem(
-                icon: Icon(Icons.all_inbox_sharp), label: 'inbox'),
+                icon: Image.asset('assets/NavIcons/donate.png'),
+                label: 'donate'),
+            BottomNavigationBarItem(
+                icon: Image.asset('assets/NavIcons/menu.png'), label: 'menu'),
+            BottomNavigationBarItem(
+                icon: Image.asset('assets/NavIcons/profile.png'),
+                label: 'profile'),
           ]),
     );
   }

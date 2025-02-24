@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:voln/pages/Home/menu_page.dart';
 import 'package:voln/resources/constant.dart';
 import 'package:voln/resources/text_heading.dart';
-import 'package:voln/resources/text_normal.dart';
-import 'package:voln/resources/text_subheading.dart';
+import 'package:voln/widgets/activities_card.dart';
 import 'package:voln/widgets/app_text.dart';
 import 'package:voln/widgets/categories_card.dart';
 import 'package:voln/widgets/event_card.dart';
@@ -16,10 +14,10 @@ extension MediaQueryValues on BuildContext {
 
 class HomePage extends StatelessWidget {
   List<Map<String, String>> categoriesImages = [
-    {'Disaster': 'QuickBarIcons/Disaster.png'},
-    {'Education': 'QuickBarIcons/Education.png'},
-    {'Medical': 'QuickBarIcons/Medical.png'},
-    {'Others': 'QuickBarIcons/Others.png'}
+    {'Disaster': 'assets/QuickBarIcons/Disaster.png'},
+    {'Education': 'assets/QuickBarIcons/Education.png'},
+    {'Medical': 'assets/QuickBarIcons/Medical.png'},
+    {'Others': 'assets/QuickBarIcons/Others.png'}
   ];
   HomePage({super.key});
 
@@ -58,14 +56,14 @@ class HomePage extends StatelessWidget {
                     AppText(
                       fontWeight: FontWeight.bold,
                       text: 'Prerit',
-                      color: Color.fromARGB(255, 205, 181, 201),
+                      color: const Color.fromARGB(255, 205, 181, 201),
                     ),
                   ],
                 ),
                 Padding(
-                  padding: EdgeInsets.only(left: screenWidth * 0.5),
+                  padding: EdgeInsets.only(left: screenWidth * 0.46),
                   child: IconButton(
-                      onPressed: () {}, icon: Icon(Icons.search_rounded)),
+                      onPressed: () {}, icon: Image.asset('assets/search.png')),
                 )
               ],
             ),
@@ -75,7 +73,7 @@ class HomePage extends StatelessWidget {
               color: appDarkPurple,
             ),
             SizedBox(
-              height: screenHeight * 0.3,
+              height: screenHeight * 0.32,
               child: Expanded(
                 child: ListView.builder(
                   itemCount: 3,
@@ -89,23 +87,35 @@ class HomePage extends StatelessWidget {
               ),
             ),
 
-            const SizedBox(height: 10),
-            const Text('Categories'),
+            SizedBox(height: screenHeight * 0.01),
             SizedBox(
-              height: screenHeight * 0.16,
+              height: screenHeight * 0.1,
               child: ListView.builder(
                 itemCount: 4,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (BuildContext context, int index) {
-                  print(categoriesImages[1].values.toString());
                   return CategoriesCard(
-                      category: categoriesImages[index].keys.toString(),
-                      imageUrl: categoriesImages[index].values.toString());
+                      category: categoriesImages[index].keys.first,
+                      imageUrl: categoriesImages[index].values.first);
                 },
               ),
             ),
-            // const Text("Trending"),
-            // SizedBox(height: screenHeight * 0.01),
+            SizedBox(height: screenHeight * 0.01),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                AppText(
+                    text: 'Popular activities', fontWeight: FontWeight.bold),
+                AppText(
+                  text: 'See all',
+                  color: textBlue,
+                )
+              ],
+            ),
+
+            SizedBox(height: screenHeight * 0.01),
+            ActivitiesCard(
+                screenWidth: screenWidth, screenHeight: screenHeight),
             // SizedBox(
             //   height: screenHeight * 0.25,
             //   child: ListView.builder(
