@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:voln/pages/Calendar/calendar.dart';
+import 'package:voln/pages/Home/event_details_page.dart';
 import 'package:voln/pages/Home/home_page.dart';
 import 'package:voln/pages/Inbox/inbox.dart';
 import 'package:voln/pages/Location/location.dart';
 import 'package:voln/pages/search/search.dart';
 import 'package:voln/resources/constant.dart';
+
+// extension MediaQueryValues on BuildContext {
+//   Size get screenSize => MediaQuery.of(this).size;
+//   double get screenWidth => screenSize.width;
+//   double get screenHeight => screenSize.height;
+// }
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -25,11 +32,12 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     final List pages = [
+      DetailsPage(),
       HomePage(),
       const Location(),
       const Search(),
       const Calendar(),
-      const Inbox(),
+      // const Inbox(),
     ];
 
     return Scaffold(
