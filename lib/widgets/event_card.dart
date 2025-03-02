@@ -15,7 +15,7 @@ class EventCard extends StatelessWidget {
     double screenWidth = context.screenWidth;
 
     return SizedBox(
-      width: screenWidth * 0.5,
+      width: screenWidth * 0.7,
       child: Card(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(7),
@@ -29,7 +29,7 @@ class EventCard extends StatelessWidget {
               SizedBox(height: screenHeight * 0.01),
               Center(
                 child: SizedBox(
-                  width: screenWidth * 0.44,
+                  width: screenWidth * 0.7,
                   height: screenHeight * 0.2,
                   child: Stack(
                     children: [

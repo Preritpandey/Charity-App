@@ -6,6 +6,7 @@ import 'package:voln/pages/Inbox/inbox.dart';
 import 'package:voln/pages/Location/location.dart';
 import 'package:voln/pages/search/search.dart';
 import 'package:voln/resources/constant.dart';
+import 'package:voln/widgets/navIcon.dart';
 
 // extension MediaQueryValues on BuildContext {
 //   Size get screenSize => MediaQuery.of(this).size;
@@ -59,17 +60,19 @@ class _HomeState extends State<Home> {
           enableFeedback: false,
           items: [
             BottomNavigationBarItem(
-                icon: Image.asset('assets/NavIcons/home.png'), label: 'home'),
+                icon: NavIcon(imageLink: 'assets/navIcons/home.png'),
+                label: 'home'),
             BottomNavigationBarItem(
-                icon: Image.asset('assets/NavIcons/bookmark.png'),
+                icon: NavIcon(imageLink: 'assets/navIcons/bookmark.png'),
                 label: 'bookmark'),
             BottomNavigationBarItem(
-                icon: Image.asset('assets/NavIcons/donate.png'),
+                icon: NavIcon(imageLink: 'assets/navIcons/donate.png'),
                 label: 'donate'),
             BottomNavigationBarItem(
-                icon: Image.asset('assets/NavIcons/menu.png'), label: 'menu'),
+                icon: NavIcon(imageLink: 'assets/navIcons/menu.png'),
+                label: 'menu'),
             BottomNavigationBarItem(
-                icon: Image.asset('assets/NavIcons/profile.png'),
+                icon: NavIcon(imageLink: 'assets/navIcons/profile.png'),
                 label: 'profile'),
           ]),
     );

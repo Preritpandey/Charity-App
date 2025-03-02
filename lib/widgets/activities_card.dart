@@ -77,8 +77,11 @@ class ActivitiesCard extends StatelessWidget {
                   SizedBox(width: screenWidth * 0.31),
                   IconButton(
                       onPressed: () {},
-                      icon: Image.asset('assets/NavIcons/bookmark.png',
-                          color: Colors.orange)),
+                      icon: SizedBox(
+                        height: screenHeight * 0.03,
+                        child: Image.asset('assets/NavIcons/bookmark.png',
+                            color: Colors.orange),
+                      )),
                   IconButton(
                       onPressed: () {},
                       icon: Icon(

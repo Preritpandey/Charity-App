@@ -38,7 +38,7 @@ class HomePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Container(
-                    height: screenHeight * 0.05,
+                    height: screenHeight * 0.04,
                     clipBehavior: Clip.antiAlias,
                     decoration: const BoxDecoration(
                       shape: BoxShape.circle,
@@ -48,6 +48,7 @@ class HomePage extends StatelessWidget {
                       fit: BoxFit.cover,
                     ),
                   ),
+                  SizedBox(width: screenWidth * 0.03),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -63,14 +64,14 @@ class HomePage extends StatelessWidget {
                     ],
                   ),
                   Padding(
-                    padding: EdgeInsets.only(left: screenWidth * 0.46),
+                    padding: EdgeInsets.only(left: screenWidth * 0.3),
                     child: IconButton(
                         onPressed: () {},
                         icon: Image.asset('assets/search.png')),
                   )
                 ],
               ),
-              SizedBox(height: screenHeight * 0.01),
+              SizedBox(height: screenHeight * 0.02),
               const TextHeading(
                 text: 'Explore Projects',
                 color: appDarkPurple,
@@ -137,7 +138,7 @@ class HomePage extends StatelessWidget {
               //                 shape: RoundedRectangleBorder(
               //                     borderRadius: BorderRadius.circular(30)),
               //                 elevation: 0,
-              //                 child: const Image(  
+              //                 child: const Image(
               //                   image: AssetImage('assets/dog.png'),
               //                   fit: BoxFit.cover,
               //                 ),

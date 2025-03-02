@@ -3,6 +3,8 @@ import 'package:voln/resources/constant.dart';
 import 'package:voln/resources/text_heading.dart';
 import 'package:voln/resources/text_subheading.dart';
 import 'package:voln/widgets/app_text.dart';
+import 'package:voln/widgets/details_status_icons.dart';
+import 'package:voln/widgets/fundraiser_card.dart';
 
 class DetailsPage extends StatelessWidget {
   DetailsPage({super.key});
@@ -66,30 +68,41 @@ class DetailsPage extends StatelessWidget {
               // height: ,
               top: screenHeight * 0.3,
               child: Container(
-                  height: screenHeight * 0.7,
-                  width: screenWidth,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(screenHeight * 0.03),
-                      topRight: Radius.circular(screenHeight * 0.03),
-                    ),
+                height: screenHeight * 0.7,
+                width: screenWidth,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(screenHeight * 0.03),
+                    topRight: Radius.circular(screenHeight * 0.03),
                   ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      TextHeading(text: 'Help Abandoned animals'),
-                      TextSubHeading(
-                          text:
-                              'Help abandoned animals in the shelter with us Animal Kaiser '),
-
-                              Row(children: [
-                                Container(),
-                                
-                              ],)
-                    ],
-                  )
-                  
-                  )),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    TextHeading(text: 'Help Abandoned animals'),
+                    TextSubHeading(
+                        text:
+                            'Help abandoned animals in the shelter with us Animal Kaiser '),
+                    Row(
+                      children: [
+                        DetailsStatus(
+                          title: 'Category',
+                          detail: 'Medical',
+                        ),
+                        DetailsStatus(
+                          title: 'Days left',
+                          detail: '11',
+                        ),
+                        DetailsStatus(
+                          title: 'Donation',
+                          detail: 'Fatured',
+                        ),
+                      ],
+                    ),
+                    FundraiserCard(),
+                  ],
+                ),
+              )),
         ],
       ),
     );
