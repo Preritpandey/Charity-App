@@ -32,7 +32,7 @@ class DetailsStatus extends StatelessWidget {
               ),
             ],
           ),
-          VerticalDivider(
+      const    VerticalDivider(
             color: darkGrey,
           )
         ],

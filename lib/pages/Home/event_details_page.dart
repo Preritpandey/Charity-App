@@ -4,6 +4,7 @@ import 'package:voln/resources/text_heading.dart';
 import 'package:voln/resources/text_subheading.dart';
 import 'package:voln/widgets/app_text.dart';
 import 'package:voln/widgets/details_status_icons.dart';
+import 'package:voln/widgets/donation_target.dart';
 import 'package:voln/widgets/fundraiser_card.dart';
 
 class DetailsPage extends StatelessWidget {
@@ -65,12 +66,12 @@ class DetailsPage extends StatelessWidget {
             ),
           ),
           Positioned(
-              // height: ,
-              top: screenHeight * 0.3,
+              top: screenHeight * 0.27,
               child: Container(
                 height: screenHeight * 0.7,
                 width: screenWidth,
                 decoration: BoxDecoration(
+                  color: backgroundWhite,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(screenHeight * 0.03),
                     topRight: Radius.circular(screenHeight * 0.03),
@@ -79,8 +80,8 @@ class DetailsPage extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    TextHeading(text: 'Help Abandoned animals'),
-                    TextSubHeading(
+                    const TextHeading(text: 'Help Abandoned animals'),
+                    const TextSubHeading(
                         text:
                             'Help abandoned animals in the shelter with us Animal Kaiser '),
                     Row(
@@ -100,6 +101,7 @@ class DetailsPage extends StatelessWidget {
                       ],
                     ),
                     FundraiserCard(),
+                    DonationTarget(),
                   ],
                 ),
               )),
