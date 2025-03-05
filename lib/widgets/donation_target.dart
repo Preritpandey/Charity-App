@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:voln/resources/constant.dart';
-import 'package:voln/resources/text_heading.dart';
 import 'package:voln/widgets/app_text.dart';
 
 class DonationTarget extends StatelessWidget {
@@ -14,7 +13,6 @@ class DonationTarget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        // const TextHeading(text: 'Charity Target', size: 15),
         SizedBox(height: screenHeight * 0.01),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -43,9 +41,7 @@ class DonationTarget extends StatelessWidget {
               borderRadius: BorderRadius.circular(20),
             ),
             child: LinearProgressIndicator(
-              value: 0.8,
-              backgroundColor: const Color.fromARGB(255, 194, 200, 200),
-            ),
+                value: 0.8, color: appBlue, backgroundColor: appBackground),
           ),
         ),
         SizedBox(height: screenHeight * 0.2),
@@ -59,7 +55,7 @@ class DonationTarget extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
                 color: appBlue,
               ),
-              child: Center(
+              child: const Center(
                   child: AppText(
                 text: 'Donate Now',
                 color: white,

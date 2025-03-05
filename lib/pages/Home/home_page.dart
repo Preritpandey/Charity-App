@@ -13,7 +13,7 @@ extension MediaQueryValues on BuildContext {
 }
 
 class HomePage extends StatelessWidget {
-  List<Map<String, String>> categoriesImages = [
+  final List<Map<String, String>> categoriesImages = [
     {'Disaster': 'assets/QuickBarIcons/Disaster.png'},
     {'Education': 'assets/QuickBarIcons/Education.png'},
     {'Medical': 'assets/QuickBarIcons/Medical.png'},

@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:voln/resources/constant.dart';
 import 'package:voln/resources/text_heading.dart';
-import 'package:voln/resources/text_subheading.dart';
 import 'package:voln/widgets/app_text.dart';
 import 'package:voln/widgets/details_status_icons.dart';
 import 'package:voln/widgets/donation_target.dart';
 import 'package:voln/widgets/fundraiser_card.dart';
 
 class DetailsPage extends StatelessWidget {
-  DetailsPage({super.key});
+  const DetailsPage({super.key});
 
   @override
   Widget build(BuildContext context) {

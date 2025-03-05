@@ -2,12 +2,12 @@
 import 'package:flutter/material.dart';
 
 class NavIcon extends StatelessWidget {
-  String imageLink;
+ final String imageLink;
 
-  NavIcon({
-    Key? key,
+  const NavIcon({
+    super.key,
     required this.imageLink,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

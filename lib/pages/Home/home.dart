@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:voln/pages/Calendar/calendar.dart';
-import 'package:voln/pages/Home/event_details_page.dart';
 import 'package:voln/pages/Home/home_page.dart';
 import 'package:voln/pages/Inbox/inbox.dart';
 import 'package:voln/pages/Location/location.dart';
@@ -26,7 +25,7 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    final List pages = [
+    List pages = [
       HomePage(),
       const Location(),
       const Search(),

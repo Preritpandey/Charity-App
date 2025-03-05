@@ -33,6 +33,7 @@ const Color backgroundWhite = Color.fromRGBO(231, 246, 244, 0.898);
 const Color cardBackground = Color.fromRGBO(240, 240, 240, 1);
 const Color darkGrey = Color.fromARGB(255, 116, 119, 119);
 const Color transparent = Colors.transparent;
+const Color appBackground = Color.fromARGB(255, 194, 200, 200);
 const MaterialColor materialHeraldGreen = MaterialColor(
   _heraldGreenPrimary,
   <int, Color>{
