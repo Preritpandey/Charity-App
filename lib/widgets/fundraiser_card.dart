@@ -45,7 +45,7 @@ class FundraiserCard extends StatelessWidget {
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
                     Container(
-                      width: screenWidth * 0.3,
+                      width: screenWidth * 0.4,
                       decoration: BoxDecoration(
                           color: white,
                           borderRadius:

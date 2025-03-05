@@ -20,10 +20,9 @@ class DetailsPage extends StatelessWidget {
         children: [
           Positioned(
             top: 0,
-            child: Container(
+            child: SizedBox(
               height: screenHeight * 0.3,
               width: screenWidth,
-              color: Colors.red,
               child: SizedBox(
                 height: screenHeight * 0.3,
                 width: double.infinity,
@@ -38,28 +37,37 @@ class DetailsPage extends StatelessWidget {
                       ),
                     ),
                     Positioned(
+                      top: screenHeight * 0.04,
                       left: screenWidth * 0,
-                      child: IconButton(
-                          onPressed: () {},
-                          icon: const Icon(Icons.arrow_back_ios_new)),
-                    ),
-                    Positioned(
-                      right: screenWidth * 0,
-                      child: IconButton(
-                        onPressed: () {},
-                        icon: const Icon(Icons.share),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: Colors.grey.withOpacity(0.6),
+                            shape: BoxShape.circle),
+                        child: IconButton(
+                            onPressed: () {},
+                            icon: const Icon(Icons.arrow_back_ios_new)),
                       ),
                     ),
                     Positioned(
-                        top: screenHeight * 0.08,
-                        child: Container(
-                            decoration: BoxDecoration(
-                                color: Colors.grey.withOpacity(0.6),
-                                borderRadius: BorderRadius.circular(5)),
-                            child: const TextHeading(
-                              text: 'Details',
-                              color: Colors.black,
-                            )))
+                      top: screenHeight * 0.04,
+                      right: screenWidth * 0,
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: Colors.grey.withOpacity(0.6),
+                            shape: BoxShape.circle),
+                        child: IconButton(
+                            onPressed: () {},
+                            icon: const Icon(Icons.share_rounded)),
+                      ),
+                    ),
+                    Positioned(
+                      top: screenHeight * 0.08,
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: Colors.grey.withOpacity(0.6),
+                            borderRadius: BorderRadius.circular(5)),
+                      ),
+                    )
                   ],
                 ),
               ),
@@ -77,32 +85,41 @@ class DetailsPage extends StatelessWidget {
                     topRight: Radius.circular(screenHeight * 0.03),
                   ),
                 ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const TextHeading(text: 'Help Abandoned animals'),
-                    const TextSubHeading(
-                        text:
-                            'Help abandoned animals in the shelter with us Animal Kaiser '),
-                    Row(
-                      children: [
-                        DetailsStatus(
-                          title: 'Category',
-                          detail: 'Medical',
-                        ),
-                        DetailsStatus(
-                          title: 'Days left',
-                          detail: '11',
-                        ),
-                        DetailsStatus(
-                          title: 'Donation',
-                          detail: 'Fatured',
-                        ),
-                      ],
-                    ),
-                    FundraiserCard(),
-                    DonationTarget(),
-                  ],
+                child: Padding(
+                  padding: EdgeInsets.only(
+                      right: screenWidth * 0.035,
+                      left: screenWidth * 0.035,
+                      top: screenHeight * 0.02),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const TextHeading(text: 'Feed the hungry childrens'),
+                      AppText(
+                          text:
+                              'Lets join together to help us feed hungry childrens accross the world. '),
+                      SizedBox(height: screenHeight * 0.01),
+                      Row(
+                        children: [
+                          DetailsStatus(
+                            title: 'Category',
+                            detail: 'Medical',
+                          ),
+                          DetailsStatus(
+                            title: 'Days left',
+                            detail: '11',
+                          ),
+                          DetailsStatus(
+                            title: 'Donation',
+                            detail: 'Fatured',
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: screenHeight * 0.02),
+                      FundraiserCard(),
+                      SizedBox(height: screenHeight * 0.02),
+                      DonationTarget(),
+                    ],
+                  ),
                 ),
               )),
         ],

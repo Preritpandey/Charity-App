@@ -11,10 +11,10 @@ const Color green = Color.fromRGBO(24, 173, 103, 1);
 const Color appPurple = Color.fromARGB(255, 200, 153, 194);
 const Color appDarkPurple = Color.fromARGB(255, 109, 86, 105);
 Color textBlue = Colors.blue.shade300;
-
+Color appBlue = Colors.blue.shade200;
 const Color marginColor = Color.fromRGBO(223, 223, 223, 1);
 const Color bluishGreen = Color.fromRGBO(0, 149, 125, 1);
-const Color darkBluishGreen = Color.fromRGBO(47, 72, 88, 1);
+const Color darkBluishGreen = Color.fromRGBO(86, 126, 151, 1);
 const Color darkBlack = Color.fromRGBO(52, 52, 52, 1);
 const Color black1 = Color.fromRGBO(75, 78, 82, 1);
 const Color black2 = Color.fromRGBO(96, 106, 114, 1);

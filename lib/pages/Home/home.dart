@@ -8,12 +8,6 @@ import 'package:voln/pages/search/search.dart';
 import 'package:voln/resources/constant.dart';
 import 'package:voln/widgets/navIcon.dart';
 
-// extension MediaQueryValues on BuildContext {
-//   Size get screenSize => MediaQuery.of(this).size;
-//   double get screenWidth => screenSize.width;
-//   double get screenHeight => screenSize.height;
-// }
-
 class Home extends StatefulWidget {
   const Home({super.key});
 
@@ -33,12 +27,11 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     final List pages = [
-      DetailsPage(),
       HomePage(),
       const Location(),
       const Search(),
       const Calendar(),
-      // const Inbox(),
+      const Inbox(),
     ];
 
     return Scaffold(
@@ -60,19 +53,19 @@ class _HomeState extends State<Home> {
           enableFeedback: false,
           items: [
             BottomNavigationBarItem(
-                icon: NavIcon(imageLink: 'assets/navIcons/home.png'),
+                icon: NavIcon(imageLink: 'assets/NavIcons/home.png'),
                 label: 'home'),
             BottomNavigationBarItem(
-                icon: NavIcon(imageLink: 'assets/navIcons/bookmark.png'),
+                icon: NavIcon(imageLink: 'assets/NavIcons/bookmark.png'),
                 label: 'bookmark'),
             BottomNavigationBarItem(
-                icon: NavIcon(imageLink: 'assets/navIcons/donate.png'),
+                icon: NavIcon(imageLink: 'assets/NavIcons/donate.png'),
                 label: 'donate'),
             BottomNavigationBarItem(
-                icon: NavIcon(imageLink: 'assets/navIcons/menu.png'),
+                icon: NavIcon(imageLink: 'assets/NavIcons/menu.png'),
                 label: 'menu'),
             BottomNavigationBarItem(
-                icon: NavIcon(imageLink: 'assets/navIcons/profile.png'),
+                icon: NavIcon(imageLink: 'assets/NavIcons/profile.png'),
                 label: 'profile'),
           ]),
     );

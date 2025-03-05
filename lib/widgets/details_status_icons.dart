@@ -3,9 +3,9 @@ import 'package:voln/resources/constant.dart';
 import 'package:voln/widgets/app_text.dart';
 
 class DetailsStatus extends StatelessWidget {
-  String title;
-  String detail;
-  DetailsStatus({super.key, required this.title, required this.detail});
+  final String title;
+  final String detail;
+  const DetailsStatus({super.key, required this.title, required this.detail});
 
   @override
   Widget build(BuildContext context) {
@@ -14,15 +14,17 @@ class DetailsStatus extends StatelessWidget {
 
     return SizedBox(
       width: screenWidth * 0.3,
-      height: screenHeight * 0.1,
+      height: screenHeight * 0.08,
       child: Row(
         children: [
           Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Row(
                 children: [
                   SizedBox(
-                      child: Image.asset('assets/QuickBarIcons/Medical.png')),
+                      height: 21,
+                      child: Image.asset('assets/NavIcons/donate.png')),
                   AppText(text: title),
                 ],
               ),
@@ -32,7 +34,7 @@ class DetailsStatus extends StatelessWidget {
               ),
             ],
           ),
-      const    VerticalDivider(
+          const VerticalDivider(
             color: darkGrey,
           )
         ],

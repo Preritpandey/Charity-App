@@ -104,16 +104,20 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               SizedBox(height: screenHeight * 0.01),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  AppText(
-                      text: 'Popular activities', fontWeight: FontWeight.bold),
-                  AppText(
-                    text: 'See all',
-                    color: textBlue,
-                  )
-                ],
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.02),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    AppText(
+                        text: 'Popular activities',
+                        fontWeight: FontWeight.bold),
+                    AppText(
+                      text: 'See all',
+                      color: textBlue,
+                    )
+                  ],
+                ),
               ),
               SizedBox(height: screenHeight * 0.01),
               ActivitiesCard(

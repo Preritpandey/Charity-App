@@ -74,7 +74,7 @@ class ActivitiesCard extends StatelessWidget {
                           iconColor: WidgetStateProperty.all(Colors.orange),
                           backgroundColor:
                               WidgetStateProperty.all(backgroundWhite))),
-                  SizedBox(width: screenWidth * 0.31),
+                  SizedBox(width: screenWidth * 0.29),
                   IconButton(
                       onPressed: () {},
                       icon: SizedBox(
@@ -86,7 +86,7 @@ class ActivitiesCard extends StatelessWidget {
                       onPressed: () {},
                       icon: Icon(
                         Icons.share,
-                        color: Colors.orange,
+                        color: appBlue,
                       )),
                 ],
               )
