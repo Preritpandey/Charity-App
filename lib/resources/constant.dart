@@ -3,30 +3,13 @@ import 'package:flutter/material.dart';
 const String versionName = 'Release v1.0.0';
 
 const String fontFamily = 'Montserrat';
-// HeraldGreen_HEX = 74C043
-// Color heraldGreen = Color.fromARGB(255, 116, 192, 67);
-const Color heraldGreen = Color.fromRGBO(116, 192, 67, 1);
 
 const Color green = Color.fromRGBO(24, 173, 103, 1);
 const Color appPurple = Color.fromARGB(255, 200, 153, 194);
 const Color appDarkPurple = Color.fromARGB(255, 109, 86, 105);
 Color textBlue = Colors.blue.shade300;
 Color appBlue = Colors.blue.shade200;
-const Color marginColor = Color.fromRGBO(223, 223, 223, 1);
-const Color bluishGreen = Color.fromRGBO(0, 149, 125, 1);
-const Color darkBluishGreen = Color.fromRGBO(86, 126, 151, 1);
-const Color darkBlack = Color.fromRGBO(52, 52, 52, 1);
-const Color black1 = Color.fromRGBO(75, 78, 82, 1);
-const Color black2 = Color.fromRGBO(96, 106, 114, 1);
-const Color black3 = Color.fromRGBO(114, 137, 143, 1);
-const Color textColor = Color.fromRGBO(47, 72, 88, 1);
-const Color iconColorBlack = Color(0xff2F4858);
-const Color white = Color.fromRGBO(255, 255, 255, 1);
-const Color dark = Color(0xff121212);
-const Color elementColor1 = Color.fromRGBO(196, 196, 196, 1);
-const Color elementColor2 = Color(0xff2F4858);
-const Color elementColor3 = Color(0xffD5FFB9);
-const Color redAccent = Colors.redAccent;
+const Color white = Colors.white;
 const Color grey = Color(0xFFF0F0F0);
 const Color unselectedLableColor = Color.fromRGBO(47, 72, 83, 0.3);
 const Color backgroundWhite = Color.fromRGBO(231, 246, 244, 0.898);
@@ -34,6 +17,13 @@ const Color cardBackground = Color.fromRGBO(240, 240, 240, 1);
 const Color darkGrey = Color.fromARGB(255, 116, 119, 119);
 const Color transparent = Colors.transparent;
 const Color appBackground = Color.fromARGB(255, 194, 200, 200);
+const Color textColor = Colors.white; // this is temporary for now.
+const Color iconColorBlack = Color(0xff2F4858);
+const Color lightBlue = Color.fromARGB(255, 0, 188, 212);
+const Color darkBlue = Color.fromARGB(255, 0, 98, 110);
+const Color darkBluishGreen = Color.fromRGBO(86, 126, 151, 1);
+const Color bluishGreen = Color.fromRGBO(0, 149, 125, 1);
+
 const MaterialColor materialHeraldGreen = MaterialColor(
   _heraldGreenPrimary,
   <int, Color>{

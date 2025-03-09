@@ -43,7 +43,9 @@ class DetailsPage extends StatelessWidget {
                             color: Colors.grey.withOpacity(0.6),
                             shape: BoxShape.circle),
                         child: IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
                             icon: const Icon(Icons.arrow_back_ios_new)),
                       ),
                     ),

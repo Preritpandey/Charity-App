@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:voln/pages/Auth/login_page.dart';
 import 'package:voln/pages/Calendar/calendar.dart';
 import 'package:voln/pages/Home/home_page.dart';
-import 'package:voln/pages/Inbox/inbox.dart';
 import 'package:voln/pages/Location/location.dart';
 import 'package:voln/pages/search/search.dart';
 import 'package:voln/resources/constant.dart';
@@ -26,11 +26,12 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     List pages = [
+      AuthPage(),
       HomePage(),
       const Location(),
       const Search(),
       const Calendar(),
-      const Inbox(),
+      // const Inbox(),
     ];
 
     return Scaffold(
@@ -43,7 +44,7 @@ class _HomeState extends State<Home> {
       body: pages[selectedTab],
       bottomNavigationBar: BottomNavigationBar(
           unselectedItemColor: iconColorBlack,
-          selectedItemColor: heraldGreen,
+          selectedItemColor: green,
           type: BottomNavigationBarType.fixed,
           showSelectedLabels: false,
           showUnselectedLabels: false,

@@ -11,7 +11,7 @@ class TextHeading extends StatelessWidget {
       {super.key,
       this.size = 16,
       required this.text,
-      this.color = textColor,
+      this.color = bluishGreen,
       this.maxLines = 2});
 
   @override

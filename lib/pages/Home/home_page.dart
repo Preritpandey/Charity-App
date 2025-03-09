@@ -49,26 +49,23 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   SizedBox(width: screenWidth * 0.03),
-                  Column(
+                  const Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const TextHeading(
+                      TextHeading(
                         text: 'Hi, Good Evening',
                         color: appDarkPurple,
                       ),
                       AppText(
                         fontWeight: FontWeight.bold,
                         text: 'Prerit',
-                        color: const Color.fromARGB(255, 205, 181, 201),
+                        color: Color.fromARGB(255, 205, 181, 201),
                       ),
                     ],
                   ),
-                  Padding(
-                    padding: EdgeInsets.only(left: screenWidth * 0.3),
-                    child: IconButton(
-                        onPressed: () {},
-                        icon: Image.asset('assets/search.png')),
-                  )
+                  const Spacer(),
+                  IconButton(
+                      onPressed: () {}, icon: Image.asset('assets/search.png'))
                 ],
               ),
               SizedBox(height: screenHeight * 0.02),
@@ -78,16 +75,14 @@ class HomePage extends StatelessWidget {
               ),
               SizedBox(
                 height: screenHeight * 0.32,
-                child: Expanded(
-                  child: ListView.builder(
-                    itemCount: 3,
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: (context, index) {
-                      return const EventCard(
-                          category: "Help children",
-                          imageUrl: "assets/children.png");
-                    },
-                  ),
+                child: ListView.builder(
+                  itemCount: 3,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    return const EventCard(
+                        category: "Help children",
+                        imageUrl: "assets/children.png");
+                  },
                 ),
               ),
               SizedBox(height: screenHeight * 0.01),
