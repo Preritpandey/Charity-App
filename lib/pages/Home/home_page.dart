@@ -104,7 +104,7 @@ class HomePage extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    AppText(
+                  const  AppText(
                         text: 'Popular activities',
                         fontWeight: FontWeight.bold),
                     AppText(

@@ -27,6 +27,6 @@ void login(String email, String password) async {
   }
 }
 
-void main() {
+void main(){
   login("pandeyprerit45@gmail.com", "SecurePass123");
 }
