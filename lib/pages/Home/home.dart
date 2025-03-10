@@ -53,6 +53,7 @@ class _HomeState extends State<Home> {
           enableFeedback: false,
           items: [
             BottomNavigationBarItem(
+              
                 icon: NavIcon(imageLink: 'assets/NavIcons/home.png'),
                 label: 'home'),
             BottomNavigationBarItem(

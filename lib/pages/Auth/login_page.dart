@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:voln/controllers/auth_bloc.dart';
+import 'package:voln/pages/Home/home_page.dart';
+import 'package:voln/resources/constant.dart';
+import 'package:voln/widgets/app_text.dart';
+import 'package:voln/widgets/button.dart';
+import 'package:voln/widgets/sign_up_widget.dart';
 
 class AuthPage extends StatefulWidget {
   @override
@@ -10,6 +15,7 @@ class AuthPage extends StatefulWidget {
 class _AuthPageState extends State<AuthPage> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  bool isSignUp = false;
   bool _isObscure = true;
 
   @override
@@ -23,8 +29,8 @@ class _AuthPageState extends State<AuthPage> {
         child: BlocConsumer<AuthBloc, AuthState>(
           listener: (context, state) {
             if (state is AuthSuccess) {
-              ScaffoldMessenger.of(context)
-                  .showSnackBar(SnackBar(content: Text('Login Successful')));
+              ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: AppText(text: 'Login Successful')));
             } else if (state is AuthFailure) {
               ScaffoldMessenger.of(context)
                   .showSnackBar(SnackBar(content: Text(state.error)));
@@ -34,6 +40,7 @@ class _AuthPageState extends State<AuthPage> {
             return Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                // SizedBox(height: screenHeight * 0.1),
                 const Text(
                   'HopeLink',
                   style: TextStyle(fontSize: 30, color: Colors.teal),
@@ -42,6 +49,7 @@ class _AuthPageState extends State<AuthPage> {
                   height: screenHeight * 0.1,
                   child: Image.asset('assets/logo.png'),
                 ),
+                SizedBox(height: screenHeight * 0.03),
                 SizedBox(
                   width: screenWidth * 0.6,
                   child: const Text(
@@ -49,22 +57,23 @@ class _AuthPageState extends State<AuthPage> {
                     textAlign: TextAlign.center,
                   ),
                 ),
+                SizedBox(height: screenHeight * 0.03),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.03),
                   child: TextField(
                     controller: emailController,
                     decoration: InputDecoration(
                       hintText: 'Email',
-                      suffixIcon: Icon(Icons.person, color: Colors.grey),
+                      suffixIcon: const Icon(Icons.person, color: Colors.grey),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(5),
                       ),
                     ),
                   ),
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: screenHeight * 0.01),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.03),
                   child: TextField(
                     controller: passwordController,
                     obscureText: _isObscure,
@@ -83,20 +92,39 @@ class _AuthPageState extends State<AuthPage> {
                     ),
                   ),
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: screenHeight * 0.02),
                 if (state is AuthLoading) CircularProgressIndicator(),
-                ElevatedButton(
-                  onPressed: () {
+                AppButton(
+                  buttonText: 'Log In',
+                  buttonColor: buttonBlue,
+                  onTap: () {
                     context.read<AuthBloc>().add(
                           LoginRequested(
                               emailController.text, passwordController.text),
                         );
+                    if (state is AuthSuccess) {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => HomePage()));
+                    }
                   },
-                  child: Text('Login'),
                 ),
-                TextButton(
-                  onPressed: () {},
-                  child: Text('Sign Up'),
+                SizedBox(height: screenHeight * 0.01),
+                Container(
+                    child: isSignUp
+                        ? SignUpWidget(
+                            isLogin: false,
+                          )
+                        : Container()),
+                SizedBox(height: screenHeight * 0.01),
+
+                AppButton(
+                  onTap: () {
+                    setState(() {
+                      isSignUp = !isSignUp;
+                    });
+                  },
+                  buttonText: 'Sign Up',
+                  textColor: darkBluishGreen,
                 ),
               ],
             );

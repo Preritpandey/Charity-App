@@ -23,6 +23,7 @@ const Color lightBlue = Color.fromARGB(255, 0, 188, 212);
 const Color darkBlue = Color.fromARGB(255, 0, 98, 110);
 const Color darkBluishGreen = Color.fromRGBO(86, 126, 151, 1);
 const Color bluishGreen = Color.fromRGBO(0, 149, 125, 1);
+const Color buttonBlue = Color.fromRGBO(86, 130, 179, 1);
 
 const MaterialColor materialHeraldGreen = MaterialColor(
   _heraldGreenPrimary,

@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 class NavIcon extends StatelessWidget {
- final String imageLink;
+  final String imageLink;
 
   const NavIcon({
     super.key,
@@ -14,7 +14,7 @@ class NavIcon extends StatelessWidget {
     return SizedBox(
         height: MediaQuery.of(context).size.height * 0.03,
         child: Image.asset(
-         imageLink,
+          imageLink,
           color: Colors.grey,
         ));
   }

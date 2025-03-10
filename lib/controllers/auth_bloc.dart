@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:http/http.dart' as http;
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 // Events
 abstract class AuthEvent extends Equatable {
@@ -42,6 +42,8 @@ class AuthFailure extends AuthState {
 
 // Bloc
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
+  final FlutterSecureStorage _secureStorage = FlutterSecureStorage();
+  
   AuthBloc() : super(AuthInitial()) {
     on<LoginRequested>(_onLoginRequested);
   }
@@ -50,7 +52,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       LoginRequested event, Emitter<AuthState> emit) async {
     emit(AuthLoading());
     try {
-      final url = Uri.parse('http://10.0.2.2:3001/api/v1/auth/login');
+      final url = Uri.parse('http://localhost:3001/api/v1/auth/login');
       final response = await http.post(
         url,
         headers: {'Content-Type': 'application/json'},
@@ -63,8 +65,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       final data = jsonDecode(response.body);
       if (response.statusCode == 200 && data['success']) {
         final token = data['token'];
-        SharedPreferences prefs = await SharedPreferences.getInstance();
-        await prefs.setString('auth_token', token);
+        await _secureStorage.write(key: 'auth_token', value: token);
         emit(AuthSuccess());
       } else {
         emit(AuthFailure(data['message'] ?? 'Login failed'));
