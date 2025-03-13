@@ -5,6 +5,7 @@ import 'package:voln/pages/Home/home_page.dart';
 import 'package:voln/resources/constant.dart';
 import 'package:voln/widgets/app_text.dart';
 import 'package:voln/widgets/button.dart';
+import 'package:voln/widgets/login_fields.dart';
 import 'package:voln/widgets/sign_up_widget.dart';
 
 class AuthPage extends StatefulWidget {
@@ -16,7 +17,7 @@ class _AuthPageState extends State<AuthPage> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   bool isSignUp = false;
-  bool _isObscure = true;
+  bool isLogin = true;
 
   @override
   Widget build(BuildContext context) {
@@ -58,39 +59,14 @@ class _AuthPageState extends State<AuthPage> {
                   ),
                 ),
                 SizedBox(height: screenHeight * 0.03),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.03),
-                  child: TextField(
-                    controller: emailController,
-                    decoration: InputDecoration(
-                      hintText: 'Email',
-                      suffixIcon: const Icon(Icons.person, color: Colors.grey),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                    ),
-                  ),
-                ),
+
                 SizedBox(height: screenHeight * 0.01),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.03),
-                  child: TextField(
-                    controller: passwordController,
-                    obscureText: _isObscure,
-                    decoration: InputDecoration(
-                      hintText: 'Password',
-                      suffixIcon: IconButton(
-                        icon: Icon(_isObscure
-                            ? Icons.visibility_off
-                            : Icons.visibility),
-                        onPressed: () =>
-                            setState(() => _isObscure = !_isObscure),
-                      ),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                    ),
-                  ),
+                  child:isLogin? LoginFields(
+                    emailController: emailController,
+                    passwordController: passwordController,
+                  ) ,
                 ),
                 SizedBox(height: screenHeight * 0.02),
                 if (state is AuthLoading) CircularProgressIndicator(),
