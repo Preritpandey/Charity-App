@@ -18,6 +18,12 @@ class _AuthPageState extends State<AuthPage> {
   final TextEditingController passwordController = TextEditingController();
   bool isSignUp = false;
   bool isLogin = true;
+  void toggleAuthCards() {
+    setState(() {
+      !isLogin;
+      !isSignUp;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -63,10 +69,12 @@ class _AuthPageState extends State<AuthPage> {
                 SizedBox(height: screenHeight * 0.01),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.03),
-                  child:isLogin? LoginFields(
-                    emailController: emailController,
-                    passwordController: passwordController,
-                  ) ,
+                  child: isLogin
+                      ? LoginFields(
+                          emailController: emailController,
+                          passwordController: passwordController,
+                        )
+                      : SignUpWidget(isLogin: isLogin),
                 ),
                 SizedBox(height: screenHeight * 0.02),
                 if (state is AuthLoading) CircularProgressIndicator(),
